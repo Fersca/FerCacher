@@ -1,0 +1,11 @@
+Jcached.
+
+This is a super-simple Key-value cache written in plain java.
+
+Version 0.1:
+
+- Multi-Thread listening at port 5555.
+- Store only strings.
+- Implements a LRU Queue to delete old elements.
+
+@fersca
