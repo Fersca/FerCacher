@@ -4,8 +4,16 @@ This is a super-simple Key-value cache written in plain java.
 
 Version 0.1:
 
-- Multi-Thread listening at port 5555.
-- Store only strings.
-- Implements a LRU Queue to delete old elements.
+- Multi-Thread connections listening at port 5555.
+- Store only strings (only for now)
+- Implements a LRU Double-Linked Queue to delete old elements.
+
+Help wanted!
+- To improve synchronized over the LRU Queue.
+- To Implements a thread pool for the connections.
+- To download/restore the cache values to disk.
+- To write a java client.
+...
+- To etc.
 
 @fersca
