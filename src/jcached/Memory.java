@@ -53,7 +53,14 @@ public class Memory {
 		
 		//Update the LRU Queue
 		if (dataNode!=null){
+			
+			//TODO: hacer que esto ponga la clave en un lugar y que luego un thread se encargue de actualizar la LRU
+			//No se va a tener perfectamente actualizala la LRU pero no importa. el get no va a ser synchronizado.
+			
+			//pensar si todas las operaciones no podrían ser iguales, la de update y la de delete también. que todas sean en diferido y se guarden en una cola.
+			
 			Queue.moveFirst(dataNode.getNode());
+			
 			return dataNode.getData();			
 		} else {
 			return null;
