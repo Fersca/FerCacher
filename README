@@ -1,6 +1,7 @@
-Jcached.
+Jcached. - Last update: March 12th, 2012.
 
 This is a super-simple Key-value cache written in plain java.
+Put, Delete and Get elements in constant-time.
 
 Version 0.1:
 
@@ -9,10 +10,11 @@ Version 0.1:
 - Implements a LRU Double-Linked Queue to delete old elements.
 
 Help wanted!
-- To improve synchronized over the LRU Queue.
+- To improve synchronized, today synchronized methods are used but can be improved for sure.
 - To Implements a thread pool for the connections.
 - To download/restore the cache values to disk.
 - To write a java client.
+- 
 ...
 - To etc.
 

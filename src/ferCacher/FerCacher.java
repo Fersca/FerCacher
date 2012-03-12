@@ -6,7 +6,9 @@ import java.net.Socket;
 
 /**
  * This Class is the Main class of the ferCacher system, it's used to manage the incoming connections.
- * It starts listening on port 5555
+ * It starts listening on port 5555.
+ * 
+ * You can access to the cache, put and get elements in constant time.
  * 
  * @author Fernando Scasserra - @fersca
  *

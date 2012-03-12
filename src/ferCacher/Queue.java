@@ -72,6 +72,10 @@ public class Queue {
 
 	}
 		
+	/**
+	 * Set the new last node and returns the previous one
+	 * @return
+	 */
 	private static synchronized Node setNewLastAndGetOldLast(){
 		Node l = last;
 		Node prev = last.getPrevious();
@@ -99,6 +103,10 @@ public class Queue {
 		return node;
 	}
 	
+	/**
+	 * Set the node as the first one
+	 * @param node
+	 */
 	private static synchronized void setAsFirst(Node node){
 		
 		synchronized(node){
