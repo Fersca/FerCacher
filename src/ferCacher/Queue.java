@@ -1,4 +1,8 @@
 package ferCacher;
+
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * LRU Double linked Queue, it's updated each time an instruction is accepted by the cache. It's used to remove the LRU element.
  * 
@@ -163,33 +167,33 @@ public class Queue {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		Node node = first;
-		
-		while (node!=null){
+		for (Node node : getElements()) {
 			
-			Node previous = node.getPrevious();
-			Node next = node.getNext();
+			String prev = node.getPrevious()!=null	?node.getPrevious().getKey():"Null";
+			String next = node.getNext()!=null		?node.getNext().getKey()	:"Null";
 			
-			String prev="";
-			String nex="";
+			sb.append("\nKey: "+node.getKey()+", previous: "+prev+", next: "+next);
 			
-			if (previous!=null)
-				prev = previous.getKey(); 
-			else 
-				prev = "null";
-			
-			if (next!=null)
-				nex = next.getKey(); 
-			else 
-				nex = "null";
-
-			sb.append("\nKey: "+node.getKey()+", prev: "+prev+", next:"+nex);
-		
-			node = next;
 		}
-		
+	
 		return sb.toString();
 	}
 	
+	/**
+	 * Return a LinkedList equivalent to the LRU-Queue
+	 * @return
+	 */
+	public static List<Node> getElements(){
+		
+		Node node = first;
+		List<Node> list = new LinkedList<Node>();
+		
+		while (node!=null){
+			list.add(node);
+			node = node.getNext();
+		}
+		
+		return list;
+	}
 	
 }

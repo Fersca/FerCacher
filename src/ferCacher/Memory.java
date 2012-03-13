@@ -12,8 +12,14 @@ public class Memory {
 	private static HashMap<String, DataNode> memory = new HashMap<String, DataNode>();
 	
 	//Max number of objects in the cache
-	private static int maxQuantity = 10;
+	private static final int maxQuantity = 10;
 	
+	//Quantity of miss elements
+	private static volatile int missQuantity = 0;
+
+	//Quantity of hit elements
+	private static volatile int hitQuantity = 0;
+
 	/**
 	 * Add data to the cache
 	 * @param key
@@ -52,10 +58,12 @@ public class Memory {
 		DataNode dataNode = memory.get(key);
 		
 		//Update the LRU Queue
-		if (dataNode!=null){			
+		if (dataNode!=null){
+			hitQuantity++;
 			Queue.moveFirst(dataNode.getNode());
 			return dataNode.getData();			
 		} else {
+			missQuantity++;
 			return null;
 		}
 	}
@@ -93,8 +101,8 @@ public class Memory {
 	 * Returns cache statistics
 	 * @return
 	 */
-	public static int stats(){
-		return memory.size();
+	public static String stats(){
+		return "Size: "+memory.size()+", Hit: "+hitQuantity+", Miss: "+missQuantity ;
 	}
 
 	/**

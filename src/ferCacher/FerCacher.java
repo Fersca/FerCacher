@@ -10,7 +10,14 @@ import java.net.Socket;
  * 
  * You can access to the cache, put and get elements in constant time.
  * 
- * @author Fernando Scasserra - @fersca
+ * The system uses a HashMap to store objects and implements a double-linked-queue to manage the LRU algorithm.
+ * The Queue doesn't performs a full scan in order to get the element and move it to the first position,
+ * it's acceded directly to the node because the hashMap element has a reference to the Queue node to do a direct access.
+ * that's why you can access it in constant-time.
+ * 
+ * The system in thread-safe, it synchronize any write action to the hashMap and any Queue modification, only when it's needed.
+ * 
+ * @author Fernando Scasserra - @fersca - March 13th, 2012
  *
  */
 public class FerCacher {

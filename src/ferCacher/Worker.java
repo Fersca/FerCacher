@@ -86,7 +86,7 @@ public class Worker implements Runnable {
 	        				        		
 	        		} else if (instruction.equals("STATS")){
 	        				        	    
-	        	        output.writeBytes("Cant: " +Memory.stats());
+	        	        output.writeBytes(Memory.stats());
 	        	        output.writeBytes("\n");
 	        	        output.writeBytes("Keys:");
 	        	        output.writeBytes("\n");
