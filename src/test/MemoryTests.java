@@ -201,9 +201,6 @@ public class MemoryTests {
 				
 	}
 	
-	
-	//TODO: test the removeLast method from the queue
-	
 	//TODO: test each method with concurrency
 	
 }
